@@ -10,7 +10,4 @@ dist/
 *.log
 
 # Composer
-vender/
-
-# SFTP
-.json
+vendor/
