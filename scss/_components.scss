@@ -1,0 +1,8 @@
+// ================================================
+// Components　共通スタイル(クラスベース)
+// ボタン、フォームなどページを跨ぐ共通項目
+// ================================================
+@forward 'components/interface';
+@forward 'components/button';
+@forward 'components/card';
+@forward 'components/forms';

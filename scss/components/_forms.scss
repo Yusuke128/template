@@ -1,0 +1,23 @@
+.form {
+  &_box {
+    margin-bottom: 1rem;
+  }
+
+  &_label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  &_input,
+  &_textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+  }
+
+  // WordPress Contact Form7対応
+  .wpcf7-form-control-wrap {
+    display: contents;
+  }
+}

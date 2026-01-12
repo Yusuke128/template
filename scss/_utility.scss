@@ -1,0 +1,17 @@
+@use 'variables' as v;
+
+// ハンバーガーオープン時のスクロール制御
+.no-scroll {
+  overflow: hidden;
+}
+
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

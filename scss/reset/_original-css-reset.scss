@@ -1,0 +1,57 @@
+/*
+** original reset
+*/
+body {
+  margin: 0;
+}
+
+hr {
+  height: 0;
+  color: inherit;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+}
+
+pre {
+  font-size: 1em;
+}
+
+table {
+  text-indent: 0;
+  border-color: inherit;
+}
+
+iframe {
+  border-style: none;
+}
+
+img {
+  height: auto;
+  border-style: none;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  margin-block: 0;
+  padding-inline-start: 0;
+}
