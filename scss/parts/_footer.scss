@@ -2,5 +2,5 @@
 // footer
 // ==================================================================
 footer {
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: calc(#{v.$padding-y-default} + env(safe-area-inset-bottom));
 }

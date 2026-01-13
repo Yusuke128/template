@@ -1,13 +1,14 @@
-// scss/components/_card.scss
+@use '../variables' as v;
 
 .card {
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: 1rem;
+  gap: map.get(v.$space, 1);
   place-content: center stretch;
   align-items: center;
   max-width: 550px;
   color: inherit;
+  border-radius: map.get(v.$radius, out);
 
   &-list {
     display: grid;
@@ -20,7 +21,7 @@
   &-content {
     display: grid;
     grid-template-rows: auto 1fr;
-    gap: 0.5rem;
+    gap: map.get(v.$space, 0.5);
     place-content: center;
     align-self: start;
   }
@@ -29,15 +30,22 @@
     display: grid;
     place-items: center;
     width: 100%;
-    height: 100%;
+    height: auto;
     aspect-ratio: 1;
     overflow: hidden;
     object-fit: contain;
+    border-radius: map.get(v.$radius, in);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &-img {
-    width: auto;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   &-sublist {

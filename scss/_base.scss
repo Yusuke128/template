@@ -18,7 +18,6 @@ html {
   color: v.$text-color;
 
   @include v.media('sp') {
-    font-size: 10px;
     line-height: 1;
   }
 }

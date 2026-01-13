@@ -3,14 +3,15 @@
 // ================================================
 @use 'sass:map';
 
-$color-primary: #f3f3f3;
-$color-secondary: #0c0c0c;
+$color-primary: #0c0c0c;
+$color-secondary: #f3f3f3;
 $color-accent: #f00;
 $color-accent-secondary: #00f;
 $font-size-main: 16px;
 $font-main: 'Shippori Mincho', 'Noto Sans JP', 'Noto Serif JP', '游明朝', serif, 'Material Icons';
 $line-height: 1.5;
 $text-color: #333;
+$radius-main: 30px;
 $breakpoints: (
   sp: 'screen and (max-width: 767px)',
   tab: 'screen and (min-width : 768px) and (max-width: 1023px)',
@@ -18,17 +19,18 @@ $breakpoints: (
   mobile: 'screen and (max-width:1023px)'
 );
 $space: (
-  xs: 0.25rem,
-  sm: 0.5rem,
-  md: 1rem,
-  lg: 2rem,
-  xl: 4rem
+  0.25: 0.25rem,
+  0.5: 0.5rem,
+  1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem
 );
 $font-size: (
-  sm: 0.875rem,
-  base: 1rem,
-  lg: 1.25rem,
-  xl: 1.5rem
+  small: 0.5rem,
+  midium: 1rem,
+  large: 1.5rem,
+  title: 2rem
 );
 $z: (
   base: 1,
@@ -36,20 +38,23 @@ $z: (
   modal: 100,
   overlay: 1000
 );
+$radius: (
+  out: $radius-main,
+  in: calc(#{$radius-main}/ 2),
+  circle: 100%
+);
+$padding-x-default: map.get($space, 2);
+$padding-y-default: map.get($space, 3);
 
 // ================================================
 // mixins ミックスイン(共通スタイル)
 // ================================================
-
-// レスポンシブ対応
 
 @mixin media($breakpoint) {
   @media #{map.get($breakpoints,$breakpoint)} {
     @content;
   }
 }
-
-// テンプレートレイアウト
 
 @mixin flex($content: space-between, $align: center) {
   display: flex;
@@ -59,10 +64,14 @@ $z: (
 
 @mixin container($max: 1440px) {
   width: min(98%, $max);
+  margin: 0 auto;
   margin-inline: auto;
 }
 
-// 絶対指定で上下中央
+// ================================================
+// placeholder プレースホルダー(共通スタイル)
+// ================================================
+
 %absolute-center {
   position: absolute;
   top: 50%;
@@ -75,6 +84,13 @@ $z: (
   list-style-position: inside;
 }
 %border {
+  border-color: var(--main);
+  border-style: solid;
+  border-width: 10px;
 }
-%radius {
+%radius-outbound {
+  border-radius: map.get($radius, out);
+}
+%radius-inbound {
+  border-radius: map.get($radius, in);
 }

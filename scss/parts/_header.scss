@@ -2,5 +2,8 @@
 // header
 // ==================================================================
 header {
-  padding-top: env(safe-area-inset-top);
+  position: sticky;
+  top: 0;
+  z-index: map.get(v.$z, header);
+  padding-top: calc(#{v.$padding-y-default} + env(safe-area-inset-top));
 }
